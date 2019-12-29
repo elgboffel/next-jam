@@ -1,7 +1,7 @@
 [build]
   base = "frontend/next-jam/"
   command = "npm run export"
-  publish = "frontend/next-jam/out/"
+  publish = "out/"
 
 [[headers]]
 for = "/*"
