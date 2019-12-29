@@ -1,3 +1,4 @@
+import styles from "./AboutPage.module.scss";
 import Link from 'next/link';
 import matter from "gray-matter";
 import ReactMarkdown from "react-markdown";
@@ -11,13 +12,10 @@ interface AboutPageProps {
 
 const AboutPage: NextPage<AboutPageProps> = (props) => { 
   const { content, data } = props;
-  const router = useRouter();
-  console.log("router", router);
-  console.log("props", props);
   
   return (
     <>
-        <h1>{data?.title}</h1>
+        <h1 className={styles.container}>{data?.title}</h1>
         <p>{content}</p>
         <p>
           <Link href="/aboutpage" as="/about/more-about">
@@ -33,7 +31,7 @@ const AboutPage: NextPage<AboutPageProps> = (props) => {
 
 AboutPage.getInitialProps = async function(context) {
     const { asPath, query } = context
-    const content = await import(`~/site/content${asPath || query.path}/index.md`);
+    const content = await import(`~/site/content${asPath || query.path}index.md`);
     const data = matter(content.default);
     return {
       ...data

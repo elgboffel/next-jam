@@ -1,16 +1,9 @@
+const compose = require('next-compose-plugins');
 const withSass = require("@zeit/next-sass");
 const path = require('path');
 const fs = require('fs');
 
-module.exports = withSass({
-  cssModules: true,
-  cssLoaderOptions: {
-    importLoaders: 1,
-    localIdentName: "[local]___[hash:base64:5]",
-  }
-})
-
-module.exports = ({
+const nextConfig = {  
   webpack: function (config) {
     config.module.rules.push({
       test: /\.md$/,
@@ -40,7 +33,7 @@ module.exports = ({
       return false;
     }
   }
-});
+};
 
 const loadData = (path) => {
   try {
@@ -50,3 +43,13 @@ const loadData = (path) => {
     return false;
   }
 }
+
+module.exports = compose ([
+  [withSass, {
+    cssModules: true,
+    sassLoaderOptions: {
+      importLoaders: 1,
+      localIdentName: "[local]___[hash:base64:5]",
+    }
+  }]
+], nextConfig);

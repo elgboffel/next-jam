@@ -8,12 +8,12 @@
         {
             "id": 2,
             "template": "AboutPage",
-            "url": "/about"
+            "url": "/about/"
         },
         {
             "id": 3,
             "template": "AboutPage",
-            "url": "/about/more-about"
+            "url": "/about/more-about/"
         }
     ]
 }
