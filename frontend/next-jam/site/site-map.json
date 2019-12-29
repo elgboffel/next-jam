@@ -1,0 +1,19 @@
+{
+    "siteMap": [
+        {
+            "id": 1,
+            "template": "FrontPage",
+            "url": "/"
+        },
+        {
+            "id": 2,
+            "template": "AboutPage",
+            "url": "/about"
+        },
+        {
+            "id": 3,
+            "template": "AboutPage",
+            "url": "/about/more-about"
+        }
+    ]
+}
