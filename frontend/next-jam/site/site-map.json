@@ -14,6 +14,11 @@
             "id": 3,
             "template": "AboutPage",
             "url": "/about/more-about"
+        },
+        {
+            "id": 4,
+            "template": "AboutPage",
+            "url": "/test"
         }
     ]
 }
