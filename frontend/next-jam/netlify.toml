@@ -1,9 +1,6 @@
 [build]
-  command = "npm run build"
+  command = "npm run export"
   publish = "frontend/next-jam/out"
-
-[context.deploy-preview]
-  command = "npm run build:preview"
 
 [[headers]]
 for = "/*"
