@@ -31,7 +31,7 @@ const AboutPage: NextPage<AboutPageProps> = (props) => {
 
 AboutPage.getInitialProps = async function(context) {
     const { asPath, query } = context
-    const content = await import(`~/site/content${asPath || query.path}index.md`);
+    const content = await import(`~/site/content${asPath || query.path}/index.md`);
     const data = matter(content.default);
     return {
       ...data
