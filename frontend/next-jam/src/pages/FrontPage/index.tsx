@@ -2,11 +2,6 @@ import styles from "./FrontPage.module.scss";
 import { NextPage } from 'next';
 import Link from 'next/link';
 
-const FrontPage: NextPage<{ userAgent: string }> = ({ userAgent }) => <h1 className={styles.container}>Hello world! - user agent: {userAgent}<Link href="/AboutPage" as="/about"><a>About</a></Link></h1>;
-
-FrontPage.getInitialProps = async ({ req }) => {
-  const userAgent = req ? req.headers['user-agent'] || "" : navigator.userAgent;
-  return { userAgent };
-};
+const FrontPage: NextPage = () => <h1 className={styles.container}>Hello world! <Link href="/AboutPage" as="/about/"><a>About</a></Link></h1>;
 
 export default FrontPage;
