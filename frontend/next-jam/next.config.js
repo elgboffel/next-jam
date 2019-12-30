@@ -17,10 +17,9 @@ const nextConfig = {
   exportTrailingSlash: true,
   exportPathMap: async function (defaultPathMap, { dev, dir, outDir, distDir, buildId }) {
     const SITE_MAP_PATH = `site/site-map.json`;
-    
+
     try {
       const siteMap = loadData(`${SITE_MAP_PATH}`).siteMap;
-
       return siteMap.reduce((paths, page) => {      
         
         paths[`${page.url}`] = { page: `/${page.template}`, query: { path: `${page.url}`, id: `${page.id}` } };
