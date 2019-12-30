@@ -8,12 +8,14 @@ interface AboutPageProps {
   data: any
 }
 
-const AboutPage: NextPage = (props) => {
+const AboutPage: NextPage<AboutPageProps> = (props) => {
   console.log(props)
+  const { content, data } = props;
+
   return (
     <>
-      <h1 className={styles.container}></h1>
-      <p></p>
+      <h1 className={styles.aboutPage}>{data?.title}</h1>
+      <p>{content}</p>
       <p>
         <Link href="/AboutPage" as="/about/more-about/" prefetch>
           <a href="/about/more-about">About more</a>
@@ -26,14 +28,14 @@ const AboutPage: NextPage = (props) => {
   )
 }
 
-// AboutPage.getInitialProps = async function (context) {
-//   const { asPath, req } = context;
-//   const content = await import(`~/site/content${req?.url ? `${req?.url}/` : `${asPath}`}index.md`);
-//   const data = matter(content.default);
+AboutPage.getInitialProps = async function (context) {
+  const { asPath, req } = context;
+  const content = await import(`~/site/content${req?.url ? `${req?.url}` : `${asPath}`}index.md`);
+  const data = matter(content.default);
 
-//   return {
-//     ...data
-//   }
-// }
+  return {
+    ...data
+  }
+}
 
 export default AboutPage
