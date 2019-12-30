@@ -15,7 +15,6 @@ const nextConfig = {
     return config;
   },
   exportTrailingSlash: true,
-  // target: 'serverless',
   exportPathMap: async function (defaultPathMap, { dev, dir, outDir, distDir, buildId }) {
     const SITE_MAP_PATH = `site/site-map.json`;
 
