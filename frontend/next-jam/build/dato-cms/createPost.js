@@ -1,5 +1,5 @@
 const fs = require("fs");
-const constants = require("./constants");
+const constants = require("../constants");
 
 const createPost = (frontmatter, path, root) => {
     

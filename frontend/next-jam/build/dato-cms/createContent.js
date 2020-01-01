@@ -1,7 +1,7 @@
 // const createPost = require("./createPost");
 const getFrontmatter = require("./getFrontmatter");
 const fs = require('fs');
-const constants = require('./constants');
+const constants = require('../constants');
 const createPost = require('./createPost');
 
 const createContent = (dato, root, i18n) => {

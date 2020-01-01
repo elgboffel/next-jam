@@ -1,5 +1,5 @@
 import siteMap from "~/site/site-map";
-import constants from "../../../../build/dato-cms/constants";
+import constants from "~/build/constants";
 import matter from "gray-matter";
 
 export const getFrontmatter = async (id: string) => {
