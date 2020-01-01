@@ -1,22 +1,12 @@
 ---
-type: article
-path: site/content/about-us
-id: '2015923'
+id: '2015908'
 itemType: article
-updatedAt: '2019-12-30T21:58:53.902Z'
-createdAt: '2019-12-30T21:58:45.965Z'
-position: 0
-children: []
-content: '<p>Proin eget tortor risus. Sed porttitor lectus nibh. Cras ultricies ligula sed magna dictum porta. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.</p><p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla quis lorem ut libero malesuada feugiat. Proin eget tortor risus. Nulla quis lorem ut libero malesuada feugiat.</p><p>Quisque velit nisi, pretium ut lacinia in, elementum id enim. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Quisque velit nisi, pretium ut lacinia in, elementum id enim.</p>'
-heading: Employees
-image: null
-slug: employees
----
-
- consectetur sed, convallis at tellus. Quisque velit nisi, pretium ut lacinia in, elementum id enim.</p>'
-    heading: Employees
-    image: null
-    slug: employees
+updatedAt: '2020-01-01T22:37:53.408Z'
+createdAt: '2019-12-30T21:52:53.979Z'
+position: 1
+children:
+  - '2015923'
+link: '2015923'
 content: '<p>Vivamus suscipit tortor eget felis porttitor volutpat. Nulla porttitor accumsan tincidunt. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Proin eget tortor risus.</p><p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Sed porttitor lectus nibh. Cras ultricies ligula sed magna dictum porta.</p>'
 heading: About us
 image:
@@ -81,6 +71,9 @@ image:
     streamingUrl: 'https://stream.mux.com/null.m3u8'
     thumbnailUrl: 'https://image.mux.com/null/thumbnail.jpg'
     mp4Url: null
+name: About us
 slug: about-us
+template: Article
+url: /about-us/
 ---
 

@@ -1,19 +1,14 @@
 /**
  * 
  * @param {Object} data 
- * @param {string} generatedPath
  */
-module.exports = (data, generatedPath = "") => {
+module.exports = (data) => {
 
     if (!data) return;
 
-    const mappedData = data.toMap(2);
+    const mappedData = data.toMap(1);
 
     return {
-        frontmatter: {
-            type: mappedData.itemType,
-            path: generatedPath,
-            ...mappedData
-        }
+        ...mappedData
     };
 };

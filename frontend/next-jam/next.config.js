@@ -1,7 +1,7 @@
-const compose = require('next-compose-plugins');
+const compose = require("next-compose-plugins");
 const withSass = require("@zeit/next-sass");
-const path = require('path');
-const fs = require('fs');
+const path = require("path");
+const siteMap = require("./site/site-map");
 
 const nextConfig = {  
   webpack: function (config) {
@@ -10,18 +10,16 @@ const nextConfig = {
       use: "raw-loader"
     });
 
-    config.resolve.alias['~'] = path.resolve(__dirname);
+    config.resolve.alias["~"] = path.resolve(__dirname);
 
     return config;
   },
   exportTrailingSlash: true,
   exportPathMap: async function (defaultPathMap, { dev, dir, outDir, distDir, buildId }) {
-    const SITE_MAP_PATH = `site/site-map.json`;
 
     try {
-      const siteMap = loadData(`${SITE_MAP_PATH}`).siteMap;
-      return siteMap.reduce((paths, page) => {      
-        
+      return Object.values(siteMap).reduce((paths, page) => {   
+
         paths[`${page.url}`] = { page: `/${page.template}`, query: { path: `${page.url}`, id: `${page.id}` } };
         
         return paths;
@@ -33,15 +31,6 @@ const nextConfig = {
     }
   }
 };
-
-const loadData = (path) => {
-  try {
-    return JSON.parse(fs.readFileSync(path, 'utf8'));
-  } catch (err) {
-    console.error(err)
-    return false;
-  }
-}
 
 module.exports = compose ([
   [withSass, {
