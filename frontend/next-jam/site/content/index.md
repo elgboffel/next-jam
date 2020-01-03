@@ -10,8 +10,8 @@ links:
   - '2015924'
 heading: Front Page 1
 name: Front Page
+slug: /
 template: FrontPage
 url: /
-slug: /
 ---
 

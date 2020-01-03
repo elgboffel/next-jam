@@ -1,7 +1,7 @@
 import styles from "./Article.module.scss";
-import matter from "gray-matter";
 import { NextPage } from 'next';
 import Link from "~/src/js/patches/link";
+import { getFrontmatterByContext } from "~/src/js/utils/site-helpers/frontmatter";
 
 interface ArticleProps {
   content: string,
@@ -22,14 +22,6 @@ const Article: NextPage<ArticleProps> = (props) => {
   )
 }
 
-Article.getInitialProps = async function (context) {
-  const { asPath, req } = context;
-  const content = await import(`~/site/content${req?.url ? `${req?.url}` : `${asPath}`}index.md`);
-  const data = matter(content.default);
-
-  return {
-    ...data
-  }
-}
+Article.getInitialProps = (context) => getFrontmatterByContext(context); 
 
 export default Article

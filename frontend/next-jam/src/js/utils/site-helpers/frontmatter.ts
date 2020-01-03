@@ -1,16 +1,27 @@
 import siteMap from "~/site/site-map";
-import constants from "~/build/constants";
 import matter from "gray-matter";
+import { NextPageContext } from "next";
 
-export const getFrontmatter = async (id: string) => {
+export const getFrontmatterById = async (id: string) => {
 
     if (!id) return;
 
     const page = siteMap[id];
-    const content = await import(`~/${constants.contentRootPath}${page?.url}index.md`);
+    const content = await import(`~/site/content${page?.url}index.md`);
     const data = matter(content.default);
 
     return {
         ...data
     };
+};
+
+export const getFrontmatterByContext = async (context: NextPageContext) => {
+    const { asPath, req } = context;
+    const pathToMarkdown = `${req?.url ? `${req?.url}` : `${asPath}`}`;
+    const content = await import(`~/site/content${pathToMarkdown}index.md`);
+    const data = matter(content.default);
+  
+    return {
+      ...data
+    }
 };

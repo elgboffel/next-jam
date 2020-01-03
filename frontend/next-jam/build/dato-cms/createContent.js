@@ -1,10 +1,9 @@
-// const createPost = require("./createPost");
-const getFrontmatter = require("./getFrontmatter");
-const fs = require('fs');
+const { buildUrl, getBaseObject, storeData, getFrontmatter } = require("./helpers");
 const constants = require('../constants');
 const createPost = require('./createPost');
 
 const createContent = (dato, root, i18n) => {
+    buildInfo(dato);
     console.time("build collections");
 
     const collectionsByTypes = dato.collectionsByType;
@@ -13,18 +12,18 @@ const createContent = (dato, root, i18n) => {
     let siteMap = {};
 
     for (let key in collectionsByTypes) {
-        if(!collectionsByTypes.hasOwnProperty(key)) continue;
+        if (!collectionsByTypes.hasOwnProperty(key)) continue;
 
         const items = collectionsByTypes[key]
 
-        if (!Array.isArray(items)) {  
+        if (!Array.isArray(items)) {
             const frontmatter = getFrontmatter(items);
-            const baseObject = getBaseObject(frontmatter, "/"); // TODO: Better way of defining front page.
+            const baseObject = getBaseObject(frontmatter, items.slug);
 
-            siteMap[`${baseObject.id}`] = {...baseObject};
-            content.push({ frontmatter: {...frontmatter, ...baseObject, slug: baseObject.url}})
+            siteMap[`${baseObject.id}`] = { ...baseObject };
+            content.push({ frontmatter: { ...frontmatter, ...baseObject } })
 
-            continue; 
+            continue;
         }
 
         items.forEach(item => {
@@ -32,8 +31,8 @@ const createContent = (dato, root, i18n) => {
             const frontmatter = getFrontmatter(item);
             const baseObject = getBaseObject(frontmatter, url);
 
-            siteMap[`${baseObject.id}`] = {...baseObject};
-            content.push({ frontmatter: {...frontmatter, ...baseObject}})
+            siteMap[`${baseObject.id}`] = { ...baseObject };
+            content.push({ frontmatter: { ...frontmatter, ...baseObject } })
         });
     }
 
@@ -42,47 +41,16 @@ const createContent = (dato, root, i18n) => {
     console.timeEnd("build collections");
 }
 
-const getBaseObject = (item, url) => {
-    const { id, name } = item;
-    return {
-        id,
-        template: item.itemType.split("_").reduce((acc, name) => `${acc}${capitalizeFirstLetter(name)}`, ""),
-        url,
-        name
-    };
-};
-
-const buildUrl = (item, itemList) => {
-    const entity = item.entity;
-    let url = `/${item.slug}/`
-    let parentId = entity.parentId;    
-
-    if (!parentId) return url;
-
-    while (parentId) {
-        const parent = itemList.filter(x => x.entity.payload.id === parentId)[0]; //TODO: This mighe be too slow. Maybe build the sitemap first and use it to find parent by id.
-
-        if (parent) {
-            url = `/${parent.slug}${url}`;
-            parentId = parent.entity.parentId
-        };
+const buildInfo = (dato) => {
+    if (process.env.INCOMING_HOOK_BODY) {
+        const json = JSON.parse(process.env.INCOMING_HOOK_BODY)
+        console.log("################### Incoming Hook Body ###################");
+        console.log(process.env.INCOMING_HOOK_BODY);
+        console.log(json.entity_id);
+        console.log(dato.find(json.entity_id).toMap());
+        console.log("asString", dato.find(json.entity_id).entity.payload);
+        console.log("################### Incoming Hook Body End ###################");
     }
-
-    return url;
-}
-
-const capitalizeFirstLetter = (string) => {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-}
-
-
-const storeData = (data, path) => {
-  try {
-    const code = `module.exports = ${JSON.stringify(data)};`;
-    fs.writeFileSync(path, code, "utf8");
-  } catch (err) {
-    console.error(err)
-  }
 }
 
 module.exports = createContent;
