@@ -17,7 +17,7 @@ const Article: NextPage<ArticleProps> = (props) => {
       <h1 className={styles.aboutPage}>{data.heading}</h1>
       <p>{data.content}</p>
       <p>
-        <Link {...data.link}/>
+        <Link id={data.link?.id}/>
       </p>
     </>
   )
