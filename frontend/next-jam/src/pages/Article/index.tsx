@@ -14,10 +14,10 @@ const Article: NextPage<ArticleProps> = (props) => {
 
   return (
     <>
-      <h1 className={styles.aboutPage}>{data?.heading}</h1>
+      <h1 className={styles.aboutPage}>{data.heading}</h1>
       <p>{data.content}</p>
       <p>
-        <Link id={data.link}/>
+        <Link {...data.link}/>
       </p>
     </>
   )

@@ -17,7 +17,7 @@ const FrontPage: NextPage<FrontPageProps> = (props) => {
             <h1 className={styles.container}>Hello world!</h1>
             <div>
                 {data?.links.map(link => (
-                    <Link id={link} />
+                    <Link {...link} />
                 ))}
             </div>
         </>

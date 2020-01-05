@@ -2,7 +2,7 @@ import { Media } from "./Media";
 import { BasePage } from "./BasePage";
 
 export interface IArticle extends BasePage {
-    link: string,
+    link: BasePage,
     content: string,
     heading: string,
     image: Media,

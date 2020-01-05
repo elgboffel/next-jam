@@ -1,16 +1,18 @@
 import NextLink from 'next/link';
 import siteMap from "~/site/site-map";
+import { BasePage } from '~/src/js/shared-typings/dato-cms/BasePage';
 
-interface LinkProps {
-    id: string,
-    name?: string
-}
+const Link: React.FC<BasePage> = (props) => {
+    let page;
 
-const Link: React.FC<LinkProps> = (props) => {
-    const { id, name } = props;
-
-    const site = siteMap;
-    const page = site[id];
+    /* If no name exists get the page from the sitemap */
+    if (!props.name) {
+        const site = siteMap;
+        page = site[props];
+    } else {
+        /* If name exists set page to props */
+        page = {...props};
+    }  
 
     if (!page) return <></>;
 
@@ -21,7 +23,7 @@ const Link: React.FC<LinkProps> = (props) => {
 
     return (
         <NextLink {...link}>
-            <a>{name ?? page.name}</a>
+            <a>{props.name ?? page.name}</a>
         </NextLink>
     )
 }
