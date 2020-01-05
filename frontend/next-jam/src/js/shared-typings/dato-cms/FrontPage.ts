@@ -1,11 +1,11 @@
 import { Media } from "./Media";
 import { BasePage } from "./BasePage";
-import { Spot } from "./Spot";
+import { ISpot } from "./Spot";
 
 export interface IFrontPage extends BasePage {
     content: string,
     heading: string,
     image: Media,
-    spots: Spot[],
+    spots: ISpot[],
     links: BasePage[]
 }

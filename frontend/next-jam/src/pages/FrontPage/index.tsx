@@ -1,8 +1,8 @@
 import styles from "./FrontPage.module.scss";
 import { NextPage } from 'next';
 import { getFrontmatterByContext } from "~/src/js/utils/site-helpers/frontmatter";
-import Link from "~/src/js/patches/link";
 import { IFrontPage } from "~/src/js/shared-typings/dato-cms/FrontPage";
+import Spot from "~/src/js/components/Spot/Spot";
 
 interface FrontPageProps {
     content: string,
@@ -15,11 +15,12 @@ const FrontPage: NextPage<FrontPageProps> = (props) => {
     return (
         <>
             <h1 className={styles.container}>Hello world!</h1>
-            <div>
-                {data?.links.map(link => (
-                    <Link id={link?.id} />
+            <div className={styles.spots}>
+                {data.spots.map((spot, index) => (
+                    <Spot key={index} {...spot} />
                 ))}
             </div>
+
         </>
     )
 }

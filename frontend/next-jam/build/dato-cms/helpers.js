@@ -72,7 +72,7 @@ const getFrontmatter = (data) => {
 
     if (data.children) delete data.children;
 
-    const mappedData = data.toMap(2);
+    const mappedData = data.toMap(1);
 
     return {
         ...mappedData
