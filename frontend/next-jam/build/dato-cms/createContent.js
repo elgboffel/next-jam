@@ -1,9 +1,17 @@
+const { buildInfo } = require("./buildInfo");
 const { buildUrl, getBaseObject, storeData, getFrontmatter } = require("./helpers");
-const constants = require('../constants');
+const { siteConstants, algoliaConstants } = require('../constants');
+const { algoliaClient } = require('../algolia/client');
+const { getIndex } = require('../algolia/getIndex');
+const { saveRecords } = require('../algolia/saveRecords');
 const createPost = require('./createPost');
 
 const createContent = (dato, root, i18n) => {
+    const client = algoliaClient;
+    const index = getIndex(algoliaConstants.MCCODE_CONTENT_INDEX, client);
+
     buildInfo(dato);
+
     console.time("build collections");
 
     const collectionsByTypes = dato.collectionsByType;
@@ -17,38 +25,37 @@ const createContent = (dato, root, i18n) => {
         const items = collectionsByTypes[key]
 
         if (!Array.isArray(items)) {
+
+            if (!items.slug) continue;
+
             const frontmatter = getFrontmatter(items);
             const baseObject = getBaseObject(frontmatter, items.slug);
 
             siteMap[`${baseObject.id}`] = { ...baseObject };
-            content.push({ frontmatter: { ...frontmatter, ...baseObject } })
+            content.push({...frontmatter, ...baseObject})
 
             continue;
         }
 
         items.forEach(item => {
+
+            if (!item.slug) return;
+
             const url = buildUrl(item, items);
             const frontmatter = getFrontmatter(item);
             const baseObject = getBaseObject(frontmatter, url);
 
             siteMap[`${baseObject.id}`] = { ...baseObject };
-            content.push({ frontmatter: { ...frontmatter, ...baseObject } })
+            content.push({...frontmatter, ...baseObject})
         });
     }
 
-    storeData(siteMap, constants.siteMapPath);
-    content.forEach(item => createPost(item, item.frontmatter.url, root));
+    storeData(siteMap, siteConstants.siteMapPath);
+    content.forEach(item => createPost(item, item.url, root));
     console.timeEnd("build collections");
-}
 
-const buildInfo = (dato) => {
-    if (process.env.INCOMING_HOOK_BODY) {
-        const json = JSON.parse(process.env.INCOMING_HOOK_BODY)
-        console.log("################### Incoming Hook Body ###################");
-        console.log(process.env.INCOMING_HOOK_BODY);
-        console.log("################### Incoming Hook Body End ###################");
-        console.log("Item: ", dato.find(json.entity_id).toMap(1));
-    }
+    //Save content to Algolia index
+    saveRecords(content, index);
 }
 
 module.exports = createContent;

@@ -1,8 +1,8 @@
 import siteMap from "~/site/site-map";
-import matter from "gray-matter";
+import matter, { GrayMatterFile } from "gray-matter";
 import { NextPageContext } from "next";
 
-export const getFrontmatterById = async (id: string) => {
+export const getFrontmatterById = async <T>(id: string) => {
 
     if (!id) return;
 
@@ -11,17 +11,19 @@ export const getFrontmatterById = async (id: string) => {
     const data = matter(content.default);
 
     return {
-        ...data
-    };
+        content: data.content,
+        data: data.data as T
+      }
 };
 
-export const getFrontmatterByContext = async (context: NextPageContext) => {
+export const getFrontmatterByContext = async <T>(context: NextPageContext) => {
     const { asPath, req } = context;
     const pathToMarkdown = `${req?.url ? `${req?.url}` : `${asPath}`}`;
     const content = await import(`~/site/content${pathToMarkdown}index.md`);
     const data = matter(content.default);
   
     return {
-      ...data
+      content: data.content,
+      data: data.data as T
     }
 };

@@ -2,10 +2,11 @@ import styles from "./FrontPage.module.scss";
 import { NextPage } from 'next';
 import { getFrontmatterByContext } from "~/src/js/utils/site-helpers/frontmatter";
 import Link from "~/src/js/patches/link";
+import { IFrontPage } from "~/src/js/shared-typings/dato-cms/FrontPage";
 
 interface FrontPageProps {
     content: string,
-    data: any
+    data: IFrontPage
   }
 
 const FrontPage: NextPage<FrontPageProps> = (props) => {

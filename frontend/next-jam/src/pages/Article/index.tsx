@@ -2,11 +2,12 @@ import styles from "./Article.module.scss";
 import { NextPage } from 'next';
 import Link from "~/src/js/patches/link";
 import { getFrontmatterByContext } from "~/src/js/utils/site-helpers/frontmatter";
+import { IArticle } from "~/src/js/shared-typings/dato-cms/Article";
 
 interface ArticleProps {
   content: string,
-  data: any
-}
+  data: IArticle
+};
 
 const Article: NextPage<ArticleProps> = (props) => {
   const { data } = props;

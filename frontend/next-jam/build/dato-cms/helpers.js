@@ -9,8 +9,9 @@ const buildUrl = (item, itemList) => {
     const entity = item.entity;
     let url = `/${item.slug}/`;
     let parentId = entity.parentId;
-    if (!parentId)
-        return url;
+
+    if (!parentId) return url;
+
     while (parentId) {
         const parent = itemList.filter(x => x.entity.payload.id === parentId)[0]; //TODO: This mighe be too slow. Maybe build the sitemap first and use it to find parent by id.
         if (parent) {
@@ -31,6 +32,7 @@ const getBaseObject = (item, url) => {
     const { id, name } = item;
     return {
         id,
+        objectID: id,
         template: item.itemType.split("_").reduce((acc, name) => `${acc}${capitalizeFirstLetter(name)}`, ""),
         url,
         name
@@ -68,7 +70,9 @@ const getFrontmatter = (data) => {
 
     if (!data) return;
 
-    const mappedData = data.toMap(1);
+    if (data.children) delete data.children;
+
+    const mappedData = data.toMap(2);
 
     return {
         ...mappedData

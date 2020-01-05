@@ -1,13 +1,14 @@
 const fs = require("fs");
-const constants = require("../constants");
+const { siteConstants } = require("../constants");
 
-const createPost = (frontmatter, path, root) => {
+const createPost = (item, path, root) => {
+
+    if (!item) throw `item is ${item}`;
     
-    if (!frontmatter) throw `frontmatter is ${frontmatter}`;
-
     const FILE_NAME = "index.md";
     const MARKDOWN_TYPE = "yaml";
-    const filePath = `${constants.contentRootPath}${path}`;
+    const filePath = `${siteConstants.contentRootPath}${path}`;
+    const frontmatter = { frontmatter: {...item } };
 
     // Check if we already have an existing folder and avoid creating a new folder
     if (fs.existsSync(filePath)) return root.createPost(`${filePath}${FILE_NAME}`, MARKDOWN_TYPE, frontmatter);
