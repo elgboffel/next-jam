@@ -6,6 +6,6 @@ export interface IFrontPage extends BasePage {
     content: string,
     heading: string,
     image: Media,
-    spots: ISpot[],
+    spots: string[],
     links: BasePage[]
 }

@@ -1,3 +1,3 @@
-const crateContent = require("./build/dato-cms/createContent");
+const datoCMS = require("./build/dato-cms");
 
-module.exports = (dato, root, i18n) => crateContent(dato, root, i18n);
+module.exports = (dato, root, i18n) => datoCMS(dato, root, i18n);

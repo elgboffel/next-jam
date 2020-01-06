@@ -1,6 +1,7 @@
 const siteConstants = {
     siteRootPath: "site",
     contentRootPath: "site/content",
+    dataRootPath: "site/data",
     siteMapPath: "site/site-map.js"
 }
 

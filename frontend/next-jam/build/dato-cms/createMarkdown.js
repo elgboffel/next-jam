@@ -1,13 +1,23 @@
 const fs = require("fs");
 const { siteConstants } = require("../constants");
 
-const createPost = (item, path, root) => {
+const createContent = (item, path, root) => {
+    const filePath = `${siteConstants.contentRootPath}${path}`;
+    createMarkdown(item, filePath, root);
+}
+
+const createData = (item, path, root) => {
+    const filePath = `${siteConstants.dataRootPath}${path}`;
+    createMarkdown(item, filePath, root);
+}
+
+const createMarkdown = (item, filePath, root) => {
+    console.log("filepath", filePath)
 
     if (!item) throw `item is ${item}`;
     
     const FILE_NAME = "index.md";
     const MARKDOWN_TYPE = "yaml";
-    const filePath = `${siteConstants.contentRootPath}${path}`;
     const frontmatter = { frontmatter: {...item } };
 
     // Check if we already have an existing folder and avoid creating a new folder
@@ -17,4 +27,6 @@ const createPost = (item, path, root) => {
     root.directory(filePath, (dir) => dir.createPost(FILE_NAME, MARKDOWN_TYPE, frontmatter));
 }
 
-module.exports = createPost;
+exports.createContent = createContent;
+exports.createData = createData;
+exports.createMarkdown = createMarkdown;

@@ -4,9 +4,9 @@ const { siteConstants, algoliaConstants } = require('../constants');
 const { algoliaClient } = require('../algolia/client');
 const { getIndex } = require('../algolia/getIndex');
 const { saveRecords } = require('../algolia/saveRecords');
-const createPost = require('./createPost');
+const { createContent, createData} = require('./createMarkdown');
 
-const createContent = (dato, root, i18n) => {
+const datoCMS = (dato, root, i18n) => {
     const client = algoliaClient;
     const index = getIndex(algoliaConstants.MCCODE_CONTENT_INDEX, client);
 
@@ -18,6 +18,7 @@ const createContent = (dato, root, i18n) => {
 
     let content = [];
     let siteMap = {};
+    let data = [];
 
     for (let key in collectionsByTypes) {
         if (!collectionsByTypes.hasOwnProperty(key)) continue;
@@ -38,11 +39,13 @@ const createContent = (dato, root, i18n) => {
         }
 
         items.forEach(item => {
+            const frontmatter = getFrontmatter(item);
 
-            if (!item.slug) return;
+            if (!item.slug)  
+                return data.push({...frontmatter});
+            
 
             const url = buildUrl(item, items);
-            const frontmatter = getFrontmatter(item);
             const baseObject = getBaseObject(frontmatter, url);
 
             siteMap[`${baseObject.id}`] = { ...baseObject };
@@ -51,11 +54,12 @@ const createContent = (dato, root, i18n) => {
     }
 
     storeData(siteMap, siteConstants.siteMapPath);
-    content.forEach(item => createPost(item, item.url, root));
+    content.forEach(item => createContent(item, item.url, root));
+    data.forEach(item => createData(item, `/${item.itemType}/${item.id}`, root));
     console.timeEnd("build collections");
 
     //Save content to Algolia index
     saveRecords(content, index);
 }
 
-module.exports = createContent;
+module.exports = datoCMS;
