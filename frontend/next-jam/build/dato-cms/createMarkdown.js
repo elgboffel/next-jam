@@ -15,7 +15,7 @@ const createMarkdown = (item, filePath, root) => {
     console.log("filepath", filePath)
 
     if (!item) throw `item is ${item}`;
-    
+
     const FILE_NAME = "index.md";
     const MARKDOWN_TYPE = "yaml";
     const frontmatter = { frontmatter: {...item } };

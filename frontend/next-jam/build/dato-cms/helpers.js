@@ -30,6 +30,8 @@ const buildUrl = (item, itemList) => {
  */
 const getBaseObject = (item, url) => {
     const { id, name } = item;
+    // template: item.entity.itemType.apiKey.split("_").reduce((acc, name) => `${acc}${capitalizeFirstLetter(name)}`, ""), // TODO: delete if unused later on
+
     return {
         id,
         objectID: id,
@@ -64,15 +66,30 @@ const storeData = (data, path) => {
 
 /**
  * 
- * @param {Object} data 
+ * @param {Object} data
+ * @param {Object[]} items
  */
-const getFrontmatter = (data) => {
+const getFrontmatter = (data, siteMap) => {
 
     if (!data) return;
 
-    if (data.children) delete data.children;
-
     const mappedData = data.toMap(1);
+
+    if (data.link) mappedData.link = data.link.toMap(1);
+
+    if (data.links) mappedData.links = data.links.toMap(1);
+
+    /* Map modular blocks */
+    Object.keys(data).forEach(name => {
+        const object = data[name];
+        const firstArrayItem = object[0];
+
+        if (firstArrayItem && firstArrayItem.entity && firstArrayItem.entity.itemType.modularBlock) {
+
+             mappedData[name] = data.spots.toMap(2); 
+        }
+    });
+
 
     return {
         ...mappedData

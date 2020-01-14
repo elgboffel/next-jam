@@ -5,7 +5,6 @@ import { ISpot } from "./Spot";
 export interface IFrontPage extends BasePage {
     content: string,
     heading: string,
-    image: Media,
-    spots: string[],
+    spots: ISpot[],
     links: BasePage[]
 }

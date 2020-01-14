@@ -1,4 +1,5 @@
 import { BaseItem } from "./BaseItem";
+import { Media } from "./Media";
 
 export interface BasePage extends BaseItem {
     position: number,
@@ -7,5 +8,6 @@ export interface BasePage extends BaseItem {
     slug: string
     objectID: string,
     template: string,
-    url: string
+    url: string,
+    image: Media,    
 }

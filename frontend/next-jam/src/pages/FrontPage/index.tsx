@@ -19,7 +19,7 @@ const FrontPage: NextPage<FrontPageProps> = (props) => {
             <h1 className={styles.container}>Hello world!</h1>
             <div className={styles.spots}>
                 {data.spots.map((spot, index) => (
-                    <SpotContainer key={index} id={spot} />
+                    <Spot key={index} {...spot} />
                 ))}
             </div>
 
@@ -28,24 +28,24 @@ const FrontPage: NextPage<FrontPageProps> = (props) => {
 }
 
 
-interface SpotContainerProps {
-    id: string
-}
+// interface SpotContainerProps {
+//     id: string
+// }
 
-const SpotContainer: React.FC<SpotContainerProps> = (props) => {
-    const { id } = props;
-    const [state, setState] = useState<ISpot>(undefined);
+// const SpotContainer: React.FC<SpotContainerProps> = (props) => {
+//     const { id } = props;
+//     const [state, setState] = useState<ISpot>(undefined);
 
-    useEffect(() => {
-        (async () => setState((await getFrontmatterDataByTypeAndId<ISpot>("spot", id))?.data))();
+//     useEffect(() => {
+//         (async () => setState((await getFrontmatterDataByTypeAndId<ISpot>("spot", id))?.data))();
          
-    }, []);
+//     }, []);
 
 
-    return (
-        <Spot data={state} />
-    )
-}
+//     return (
+//         <Spot data={state} />
+//     )
+// }
 
 FrontPage.getInitialProps = (context) => getFrontmatterByContext(context);
 
