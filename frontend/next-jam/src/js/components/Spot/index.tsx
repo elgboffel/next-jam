@@ -12,8 +12,8 @@ const Spot: React.FC<SpotProps> = (props) => {
     if (!link) return <></>;
 
     return (
-        <div className={styles.container}>
-            <img src={media?.url ?? link.image?.url} />
+        <div className={styles.container}>            
+            <img src={media?.url ?? `${link.image?.url}?w=300&h=400&fm=jpg`} />
             <Link id={link?.id}>
                 {heading && (
                     <h4>{heading}</h4>
