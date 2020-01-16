@@ -7,7 +7,7 @@
     "dev": "next",
     "build": "dato dump && next build && next export",
     "build:markdown": "dato dump --preview",
-    "start": "serve out"
+    "serve": "serve out"
   },
   "keywords": [],
   "author": "",
