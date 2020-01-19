@@ -55,7 +55,16 @@ const datoCMS = (dato, root, i18n) => {
     console.timeEnd("build collections");
 
     //Save content to Algolia index
-    saveRecords(content, index, true);
+    saveRecords(content.map(x => { 
+        return {
+            id: x.id,
+            objectID: x.id,
+            heading: x.heading,
+            image: x.image.url,
+            lead: x.lead,
+            content: x.content
+        }
+    }), index, true);
 }
 
 module.exports = datoCMS;
