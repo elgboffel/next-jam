@@ -60,7 +60,7 @@ const datoCMS = (dato, root, i18n) => {
             id: x.id,
             objectID: x.id,
             heading: x.heading,
-            image: x.image.url,
+            image: x.image && x.image.url,
             lead: x.lead,
             content: x.content
         }
