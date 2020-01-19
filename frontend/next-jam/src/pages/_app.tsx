@@ -9,8 +9,8 @@ class Site extends App {
 
     return (
         <SiteLayout>
-            <AnimatePresence exitBeforeEnter>
-                <Component {...pageProps} key={router.route} />
+            <AnimatePresence exitBeforeEnter>     
+                <Component {...pageProps} key={router.asPath} />
             </AnimatePresence>
         </SiteLayout>
     );

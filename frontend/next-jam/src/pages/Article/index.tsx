@@ -48,28 +48,21 @@ const backVariants = {
   }
 };
 
-interface ArticleProps {
-  content: string,
-  data: IArticle
-};
+const Article: NextPage<IArticle> = (props) => {
+  const { image, heading, content, link } = props;
 
-const Article: NextPage<ArticleProps> = (props) => {
-  const { data } = props;
-
-  return (
-    <>
-      <motion.div initial="exit" animate="enter" exit="exit">
-        <motion.img variants={imageVariants} src={`${data.image?.url}?w=99200&h=500&fm=jpg`} />
-        <motion.div variants={textVariants}>
-          <h1 className={styles.aboutPage}>{data.heading}</h1>
-          <p>{data.content}</p>
-        </motion.div>
-        <motion.div variants={backVariants}>
-
-          <Link id={data.link?.id}/>
-        </motion.div>
+  return (    
+    <motion.div initial="exit" animate="enter" exit="exit">
+      <motion.img variants={imageVariants} src={`${image?.url}?w=99200&h=500&fm=jpg`} />
+      <motion.div variants={textVariants}>
+        <h1 className={styles.aboutPage}>{heading}</h1>
+        <p>{content}</p>
       </motion.div>
-    </>
+      <motion.div variants={backVariants}>
+
+        <Link id={link?.id}/>
+      </motion.div>
+    </motion.div>
   )
 }
 
