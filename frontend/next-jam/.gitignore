@@ -1,4 +1,10 @@
-node_modules
-.next
-out
+# IDE
 /.idea/
+/.vs/
+
+# dependencies
+/node_modules
+
+# production
+/out
+/.next
