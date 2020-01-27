@@ -69,7 +69,7 @@ const storeData = (data, path) => {
  * @param {Object} data
  * @param {Object[]} items
  */
-const getFrontmatter = (data, siteMap) => {
+const getFrontmatter = (data) => {
 
     if (!data) return;
 

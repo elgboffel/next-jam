@@ -1,7 +1,7 @@
 ---
 id: '2015908'
 itemType: article
-updatedAt: '2020-01-04T11:03:41.000Z'
+updatedAt: '2020-01-20T16:58:33.597Z'
 createdAt: '2019-12-30T21:52:53.979Z'
 position: 1
 children:
@@ -9,7 +9,7 @@ children:
 link:
   id: '2015923'
   itemType: article
-  updatedAt: '2020-01-04T16:19:35.459Z'
+  updatedAt: '2020-01-20T16:59:12.405Z'
   createdAt: '2019-12-30T21:58:45.965Z'
   position: 0
   children:
@@ -73,7 +73,7 @@ link:
       streamingUrl: 'https://stream.mux.com/null.m3u8'
       thumbnailUrl: 'https://image.mux.com/null/thumbnail.jpg'
       mp4Url: null
-  name: Employees
+  name: Employeess
   slug: employees
 content: '<p>Vivamus suscipit tortor eget felis porttitor volutpat. Nulla porttitor accumsan tincidunt. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Proin eget tortor risus.</p><p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Sed porttitor lectus nibh. Cras ultricies ligula sed magna dictum porta.</p>'
 heading: About uss
@@ -139,7 +139,7 @@ image:
     streamingUrl: 'https://stream.mux.com/null.m3u8'
     thumbnailUrl: 'https://image.mux.com/null/thumbnail.jpg'
     mp4Url: null
-name: About uss
+name: About us
 slug: about-us
 objectID: '2015908'
 template: Article

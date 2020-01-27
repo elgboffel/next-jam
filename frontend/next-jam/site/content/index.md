@@ -176,7 +176,7 @@ spots:
     link:
       id: '2015923'
       itemType: article
-      updatedAt: '2020-01-04T16:19:35.459Z'
+      updatedAt: '2020-01-20T16:59:12.405Z'
       createdAt: '2019-12-30T21:58:45.965Z'
       position: 0
       children:
@@ -240,7 +240,7 @@ spots:
           streamingUrl: 'https://stream.mux.com/null.m3u8'
           thumbnailUrl: 'https://image.mux.com/null/thumbnail.jpg'
           mp4Url: null
-      name: Employees
+      name: Employeess
       slug: employees
   - id: '2048043'
     itemType: spot
@@ -277,7 +277,7 @@ spots:
     link:
       id: '2015908'
       itemType: article
-      updatedAt: '2020-01-04T11:03:41.000Z'
+      updatedAt: '2020-01-20T16:58:33.597Z'
       createdAt: '2019-12-30T21:52:53.979Z'
       position: 1
       children:
@@ -347,7 +347,7 @@ spots:
           streamingUrl: 'https://stream.mux.com/null.m3u8'
           thumbnailUrl: 'https://image.mux.com/null/thumbnail.jpg'
           mp4Url: null
-      name: About uss
+      name: About us
       slug: about-us
   - id: '2048044'
     itemType: spot
@@ -596,7 +596,7 @@ spots:
 links:
   - id: '2015923'
     itemType: article
-    updatedAt: '2020-01-04T16:19:35.459Z'
+    updatedAt: '2020-01-20T16:59:12.405Z'
     createdAt: '2019-12-30T21:58:45.965Z'
     position: 0
     children:
@@ -660,7 +660,7 @@ links:
         streamingUrl: 'https://stream.mux.com/null.m3u8'
         thumbnailUrl: 'https://image.mux.com/null/thumbnail.jpg'
         mp4Url: null
-    name: Employees
+    name: Employeess
     slug: employees
   - id: '2016827'
     itemType: article
@@ -737,7 +737,7 @@ links:
     slug: level-3-about-us
   - id: '2015908'
     itemType: article
-    updatedAt: '2020-01-04T11:03:41.000Z'
+    updatedAt: '2020-01-20T16:58:33.597Z'
     createdAt: '2019-12-30T21:52:53.979Z'
     position: 1
     children:
@@ -807,7 +807,7 @@ links:
         streamingUrl: 'https://stream.mux.com/null.m3u8'
         thumbnailUrl: 'https://image.mux.com/null/thumbnail.jpg'
         mp4Url: null
-    name: About uss
+    name: About us
     slug: about-us
   - id: '2015924'
     itemType: article

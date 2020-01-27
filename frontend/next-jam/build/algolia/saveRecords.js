@@ -2,7 +2,7 @@
 /**
  * @param {object} object
  */
-const saveRecords = (objects, index, clearIndex = false) => {
+exports.saveRecords = (objects, index, clearIndex = false) => {
 
     if (! index || !objects) throw `no algolia index or object found to add as index record`;
 
@@ -15,5 +15,3 @@ const saveRecords = (objects, index, clearIndex = false) => {
         if (err) throw err;
     });
 }
-
-exports.saveRecords = saveRecords;
