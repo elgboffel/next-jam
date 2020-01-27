@@ -3,7 +3,7 @@
 [build]
   base = "frontend/next-jam/"
   command = "dato dump && next export"
-  publish = "frontend/next-jam/out/"
+  publish = "out/"
   
 # Deploy Preview context: all deploys generated from a pull/merge request will
 # inherit these settings.
