@@ -1,1 +1,0 @@
-{"ast":null,"code":"import React from \"react\";\nvar __jsx = React.createElement;\nimport Link from \"next/link\";\n\nconst Navigation = props => {\n  return __jsx(\"nav\", null, __jsx(Link, {\n    href: \"/FrontPage\",\n    as: \"/\"\n  }, __jsx(\"a\", null, \"Home\")));\n};\n\nexport default Navigation;","map":null,"metadata":{},"sourceType":"module"}

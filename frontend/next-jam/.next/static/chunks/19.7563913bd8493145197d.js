@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[19],{"3gkO":function(n,e,d){"use strict";d.r(e),e.default="---\nid: '2048042'\nitemType: spot\nupdatedAt: '2020-01-05T09:27:58.668Z'\ncreatedAt: '2020-01-05T09:27:36.206Z'\nlead: ''\nheading: ''\nmedia: null\nlink: '2015923'\n---\n\n"}}]);
