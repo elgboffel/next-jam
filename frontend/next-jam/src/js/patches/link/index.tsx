@@ -16,13 +16,13 @@ const Link: React.FC<LinkProps> = (props) => {
     const link = {
         href: `/${page.template}`,
         as: page.url
-    }
+    };
 
     return (
         <NextLink {...link}>
             <a>{name ?? page.name}</a>
         </NextLink>
     )
-}
+};
 
 export default Link;
