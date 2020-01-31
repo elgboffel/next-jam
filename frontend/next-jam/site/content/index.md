@@ -14,7 +14,7 @@ spots:
     link:
       id: '2048015'
       itemType: article
-      updatedAt: '2020-01-05T09:15:38.821Z'
+      updatedAt: '2020-01-31T20:58:38.367Z'
       createdAt: '2020-01-05T09:14:29.833Z'
       position: 0
       children: []
@@ -84,7 +84,7 @@ spots:
           thumbnailUrl: 'https://image.mux.com/null/thumbnail.jpg'
           mp4Url: null
       name: Snow
-      slug: snow
+      slug: snoww
   - id: '2048041'
     itemType: spot
     updatedAt: '2020-01-05T09:27:58.637Z'
