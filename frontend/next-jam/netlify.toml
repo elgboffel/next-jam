@@ -2,7 +2,7 @@
 # unless otherwise overridden by more specific contexts.
 [build]
   base = "frontend/next-jam/"
-  command = "dato dump && next build && next export"
+  command = "dato dump && next export"
   publish = "out/"
   
 # Deploy Preview context: all deploys generated from a pull/merge request will

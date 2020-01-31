@@ -1,0 +1,123 @@
+{
+  "mini-css-extract-plugin ../../../../../Johnny Kristensen\\Desktop\\next-jam\\frontend\\next-jam\\node_modules\\@zeit\\next-css\\node_modules\\css-loader\\index.js??ref--5-1!../../../../../Johnny Kristensen\\Desktop\\next-jam\\frontend\\next-jam\\node_modules\\sass-loader\\lib\\loader.js??ref--5-2!../../../../../Johnny Kristensen\\Desktop\\next-jam\\frontend\\next-jam\\src\\pages\\Article\\Article.module.scss": [
+    {
+      "modules": {
+        "byIdentifier": {},
+        "usedIds": {}
+      },
+      "chunks": {
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
+        "bySource": {},
+        "usedIds": [
+          0
+        ]
+      }
+    }
+  ],
+  "mini-css-extract-plugin ../../../../../Johnny Kristensen\\Desktop\\next-jam\\frontend\\next-jam\\node_modules\\@zeit\\next-css\\node_modules\\css-loader\\index.js??ref--5-1!../../../../../Johnny Kristensen\\Desktop\\next-jam\\frontend\\next-jam\\node_modules\\sass-loader\\lib\\loader.js??ref--5-2!../../../../../Johnny Kristensen\\Desktop\\next-jam\\frontend\\next-jam\\src\\pages\\FrontPage\\FrontPage.module.scss": [
+    {
+      "modules": {
+        "byIdentifier": {},
+        "usedIds": {}
+      },
+      "chunks": {
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
+        "bySource": {},
+        "usedIds": [
+          0
+        ]
+      }
+    }
+  ],
+  "mini-css-extract-plugin ../../../../../Johnny Kristensen\\Desktop\\next-jam\\frontend\\next-jam\\node_modules\\@zeit\\next-css\\node_modules\\css-loader\\index.js??ref--5-1!../../../../../Johnny Kristensen\\Desktop\\next-jam\\frontend\\next-jam\\node_modules\\sass-loader\\lib\\loader.js??ref--5-2!../../../../../Johnny Kristensen\\Desktop\\next-jam\\frontend\\next-jam\\src\\js\\components\\Spot\\Spot.scss": [
+    {
+      "modules": {
+        "byIdentifier": {},
+        "usedIds": {}
+      },
+      "chunks": {
+        "byName": {
+          "mini-css-extract-plugin": 0
+        },
+        "bySource": {},
+        "usedIds": [
+          0
+        ]
+      }
+    }
+  ],
+  "modules": {
+    "byIdentifier": {
+      "css ../../../../../Johnny Kristensen\\Desktop\\next-jam\\frontend\\next-jam\\node_modules\\@zeit\\next-css\\node_modules\\css-loader\\index.js??ref--5-1!../../../../../Johnny Kristensen\\Desktop\\next-jam\\frontend\\next-jam\\node_modules\\sass-loader\\lib\\loader.js??ref--5-2!../../../../../Johnny Kristensen\\Desktop\\next-jam\\frontend\\next-jam\\src\\pages\\Article\\Article.module.scss 0": 0,
+      "ignored ../../../../../Johnny Kristensen\\Desktop\\next-jam\\frontend\\next-jam\\node_modules\\gray-matter fs": 1,
+      "css ../../../../../Johnny Kristensen\\Desktop\\next-jam\\frontend\\next-jam\\node_modules\\@zeit\\next-css\\node_modules\\css-loader\\index.js??ref--5-1!../../../../../Johnny Kristensen\\Desktop\\next-jam\\frontend\\next-jam\\node_modules\\sass-loader\\lib\\loader.js??ref--5-2!../../../../../Johnny Kristensen\\Desktop\\next-jam\\frontend\\next-jam\\src\\pages\\FrontPage\\FrontPage.module.scss 0": 2,
+      "css ../../../../../Johnny Kristensen\\Desktop\\next-jam\\frontend\\next-jam\\node_modules\\@zeit\\next-css\\node_modules\\css-loader\\index.js??ref--5-1!../../../../../Johnny Kristensen\\Desktop\\next-jam\\frontend\\next-jam\\node_modules\\sass-loader\\lib\\loader.js??ref--5-2!../../../../../Johnny Kristensen\\Desktop\\next-jam\\frontend\\next-jam\\src\\js\\components\\Spot\\Spot.scss 0": 3
+    },
+    "usedIds": {
+      "0": 0,
+      "1": 1,
+      "2": 2,
+      "3": 3
+    }
+  },
+  "chunks": {
+    "byName": {
+      "commons": 0,
+      "static/runtime/webpack.js": 1,
+      "styles": 2,
+      "static/runtime/main.js": 3,
+      "static/runtime/polyfills.js": 4,
+      "static\\YAvQ_OkepCSVwLMhcJyv_\\pages\\Article.js": 5,
+      "static\\YAvQ_OkepCSVwLMhcJyv_\\pages\\FrontPage.js": 6,
+      "static\\YAvQ_OkepCSVwLMhcJyv_\\pages\\_app.js": 7,
+      "static\\YAvQ_OkepCSVwLMhcJyv_\\pages\\_error.js": 8
+    },
+    "bySource": {
+      "0 ../../../../../Johnny Kristensen\\Desktop\\next-jam\\frontend\\next-jam\\site lazy /^\\.\\/content.*index\\.md$/ groupOptions: {} namespace object ./content/about-us/employees/index.md": 9,
+      "0 ../../../../../Johnny Kristensen\\Desktop\\next-jam\\frontend\\next-jam\\site lazy /^\\.\\/content.*index\\.md$/ groupOptions: {} namespace object ./content/about-us/employees/level-3-about-us/index.md": 10,
+      "0 ../../../../../Johnny Kristensen\\Desktop\\next-jam\\frontend\\next-jam\\site lazy /^\\.\\/content.*index\\.md$/ groupOptions: {} namespace object ./content/about-us/index.md": 11,
+      "0 ../../../../../Johnny Kristensen\\Desktop\\next-jam\\frontend\\next-jam\\site lazy /^\\.\\/content.*index\\.md$/ groupOptions: {} namespace object ./content/index.md": 12,
+      "0 ../../../../../Johnny Kristensen\\Desktop\\next-jam\\frontend\\next-jam\\site lazy /^\\.\\/content.*index\\.md$/ groupOptions: {} namespace object ./content/lights/index.md": 13,
+      "0 ../../../../../Johnny Kristensen\\Desktop\\next-jam\\frontend\\next-jam\\site lazy /^\\.\\/content.*index\\.md$/ groupOptions: {} namespace object ./content/my-awesome-page/index.md": 14,
+      "0 ../../../../../Johnny Kristensen\\Desktop\\next-jam\\frontend\\next-jam\\site lazy /^\\.\\/content.*index\\.md$/ groupOptions: {} namespace object ./content/my-awesome-page/snow/index.md": 15,
+      "0 ../../../../../Johnny Kristensen\\Desktop\\next-jam\\frontend\\next-jam\\site lazy /^\\.\\/content.*index\\.md$/ groupOptions: {} namespace object ./content/road/index.md": 16,
+      "0 ../../../../../Johnny Kristensen\\Desktop\\next-jam\\frontend\\next-jam\\site\\data lazy /^\\.\\/.*\\/index\\.md$/ groupOptions: {} namespace object ./spot/2048040/index.md": 17,
+      "0 ../../../../../Johnny Kristensen\\Desktop\\next-jam\\frontend\\next-jam\\site\\data lazy /^\\.\\/.*\\/index\\.md$/ groupOptions: {} namespace object ./spot/2048041/index.md": 18,
+      "0 ../../../../../Johnny Kristensen\\Desktop\\next-jam\\frontend\\next-jam\\site\\data lazy /^\\.\\/.*\\/index\\.md$/ groupOptions: {} namespace object ./spot/2048042/index.md": 19,
+      "0 ../../../../../Johnny Kristensen\\Desktop\\next-jam\\frontend\\next-jam\\site\\data lazy /^\\.\\/.*\\/index\\.md$/ groupOptions: {} namespace object ./spot/2048043/index.md": 20,
+      "0 ../../../../../Johnny Kristensen\\Desktop\\next-jam\\frontend\\next-jam\\site\\data lazy /^\\.\\/.*\\/index\\.md$/ groupOptions: {} namespace object ./spot/2048044/index.md": 21,
+      "0 ../../../../../Johnny Kristensen\\Desktop\\next-jam\\frontend\\next-jam\\site\\data lazy /^\\.\\/.*\\/index\\.md$/ groupOptions: {} namespace object ./spot/2048045/index.md": 22,
+      "0 ../../../../../Johnny Kristensen\\Desktop\\next-jam\\frontend\\next-jam\\site\\data lazy /^\\.\\/.*\\/index\\.md$/ groupOptions: {} namespace object ./spot/2048046/index.md": 23
+    },
+    "usedIds": [
+      0,
+      1,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      2,
+      20,
+      21,
+      22,
+      23,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ]
+  }
+}
