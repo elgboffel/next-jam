@@ -9,7 +9,7 @@ const Navigation = (props) => {
         <nav className={styles.navigation}>
             <div className={styles.navigation__content}>
                 <Link href="/FrontPage" as="/"><a>Home</a></Link>
-                <Link href="/Article" as="/lights"><a>lights</a></Link>
+                <Link href="/Article" as="/lights/"><a>lights</a></Link>
             </div>
         </nav>
     )
