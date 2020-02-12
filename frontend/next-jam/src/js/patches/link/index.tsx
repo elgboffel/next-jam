@@ -1,3 +1,4 @@
+import React from "react";
 import NextLink from 'next/link';
 import siteMap from "~/site/site-map";
 
@@ -7,7 +8,7 @@ interface LinkProps {
 }
 
 const Link: React.FC<LinkProps> = (props) => {
-    const { id, name } = props;
+    const {id, name} = props;
 
     const page = siteMap[id];
 
@@ -20,7 +21,12 @@ const Link: React.FC<LinkProps> = (props) => {
 
     return (
         <NextLink {...link}>
-            <a>{name ?? page.name}</a>
+            <a>
+                {props.children
+                    ? props.children
+                    : name ?? page.name
+                }
+            </a>
         </NextLink>
     )
 };

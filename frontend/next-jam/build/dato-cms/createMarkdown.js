@@ -4,12 +4,12 @@ const { siteConstants } = require("../constants");
 const createContent = (item, path, root) => {
     const filePath = `${siteConstants.contentRootPath}${path}`;
     createMarkdown(item, filePath, root);
-}
+};
 
 const createData = (item, path, root) => {
     const filePath = `${siteConstants.dataRootPath}${path}`;
     createMarkdown(item, filePath, root);
-}
+};
 
 const createMarkdown = (item, filePath, root) => {
     console.log("filepath", filePath)
@@ -25,7 +25,7 @@ const createMarkdown = (item, filePath, root) => {
 
     // If we get here create a new folder and create a post
     root.directory(filePath, (dir) => dir.createPost(FILE_NAME, MARKDOWN_TYPE, frontmatter));
-}
+};
 
 exports.createContent = createContent;
 exports.createData = createData;

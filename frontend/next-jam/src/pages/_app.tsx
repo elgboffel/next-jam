@@ -1,3 +1,4 @@
+import "../scss/main.scss";
 import React from 'react';
 import App from 'next/app';
 import { AnimatePresence } from 'framer-motion';
