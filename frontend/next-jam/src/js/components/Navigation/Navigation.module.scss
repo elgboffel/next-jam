@@ -1,0 +1,22 @@
+.navigation {
+  background-color: tomato;
+  color: white;
+  font-size: 22px;
+  margin-bottom: 100px;
+
+  a {
+    color: inherit;
+    font-size: inherit;
+    text-decoration: none;
+    margin: 0 25px 0 0;
+  }
+
+  &__content {
+    min-height: 65px;
+    margin: 0 auto;
+    width: 1200px;
+    display: flex;
+    align-items: center;
+  }
+}
+

@@ -2,6 +2,7 @@ import {ISpot} from "~/src/js/shared-typings/dato-cms/Spot";
 import Link from "~/src/js/patches/link";
 import {motion} from "framer-motion";
 import styles from "./Spot.module.scss";
+import React from "react";
 
 const postVariants = {
     initial: {scale: 0.96, y: 30, opacity: 0},
@@ -28,7 +29,10 @@ const Spot: React.FC<SpotProps> = (props) => {
             <Link id={link?.id}>
                 <>
                     <motion.div whileHover="hover" variants={{hover: {scale: 0.96}}}>
-                        <img src={media?.url ?? `${link.image?.url}?w=300&h=400&fm=jpg`}/>
+                        {media?.url.indexOf(".mp4") > -1
+                            ? <video autoPlay loop><source src={media?.url ?? `${link.image?.url}`} type="video/mp4"/></video>
+                            : <img src={media?.url ?? `${link.image?.url}?w=300&h=400&fm=jpg`} alt=""/>
+                        }                        
                     </motion.div>
                     <div className={styles.spot__content}>
                     <h4 className="font-bold text-xl mb-2">{link.name ?? heading}</h4>

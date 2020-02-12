@@ -1,11 +1,9 @@
 .spot {
-  display: grid;
-  grid-template-rows: max-content 200px 1fr;
   color: darkgrey;
   font-size: 18px;
-  margin-left: 15px;
+  margin: 0 15px 35px 0;
 
-  img {
+  img, video {
     object-fit: cover;
     width: 200px;
     height: 200px;

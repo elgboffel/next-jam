@@ -1,4 +1,5 @@
 import Navigation from "../Navigation";
+import React from "react";
 
 
 const SiteLayout = (props) => {
