@@ -1,10 +1,10 @@
 const { buildInfo } = require("./buildInfo");
-const { buildUrl, getBaseObject, storeData, getFrontmatter } = require("./helpers");
+const { buildUrl, getBaseObject, storeSiteMap, getFrontmatter } = require("./helpers");
 const { siteConstants, algoliaConstants } = require('../constants');
 const { algoliaClient } = require('../algolia/client');
 const { getIndex } = require('../algolia/getIndex');
 const { saveRecords } = require('../algolia/saveRecords');
-const { createContent, createData} = require('./createMarkdown');
+const { createContent } = require('./createMarkdown');
 
 const datoCMS = (dato, root, i18n) => {
     const index = getIndex(algoliaConstants.MCCODE_CONTENT_INDEX, algoliaClient);
@@ -49,7 +49,7 @@ const datoCMS = (dato, root, i18n) => {
         });
     }
 
-    storeData(siteMap, siteConstants.siteMapPath);
+    storeSiteMap(siteMap);
     content.forEach(item => item && createContent(item, item.url, root));
     console.timeEnd("build collections");
 

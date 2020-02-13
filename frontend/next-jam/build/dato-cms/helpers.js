@@ -52,12 +52,11 @@ const capitalizeFirstLetter = (string) => {
 /**
  * 
  * @param {object} data 
- * @param {string} path 
  */
-const storeData = (data, path) => {
-    try {
-        const code = `module.exports = ${JSON.stringify(data)};`;
-        fs.writeFileSync(path, code, "utf8");
+const storeSiteMap = (data) => {
+    try {        
+        fs.writeFileSync("build/dato-cms/siteMap.js", `module.exports = ${JSON.stringify(data)};`, "utf8");
+        fs.writeFileSync(siteConstants.siteMapPath, `export const siteMap = ${JSON.stringify(data)};`, "utf8");
     }
     catch (err) {
         console.error(err);
@@ -97,7 +96,7 @@ const getFrontmatter = (data) => {
 };
 
 exports.getFrontmatter = getFrontmatter;
-exports.storeData = storeData;
+exports.storeSiteMap = storeSiteMap;
 exports.getBaseObject = getBaseObject;
 exports.buildUrl = buildUrl;
 exports.capitalizeFirstLetter = capitalizeFirstLetter;

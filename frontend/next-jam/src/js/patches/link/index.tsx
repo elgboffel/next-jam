@@ -1,6 +1,7 @@
 import React from "react";
 import NextLink from 'next/link';
-import siteMap from "~/site/site-map";
+import {siteMap} from "../../../../site/site-map";
+
 
 interface LinkProps {
     id: string,
@@ -18,7 +19,7 @@ const Link: React.FC<LinkProps> = (props) => {
         href: `/${page.template}`,
         as: page.url
     };
-
+siteMap
     return (
         <NextLink {...link}>
             <a>

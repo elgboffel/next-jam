@@ -1,10 +1,10 @@
-import {ISpot} from "~/src/js/shared-typings/dato-cms/Spot";
-import Link from "~/src/js/patches/link";
+import {ISpot} from "~/js/shared-typings/dato-cms/Spot";
+import Link from "~/js/patches/link";
 import {motion} from "framer-motion";
 import styles from "./Spot.module.scss";
 import React from "react";
 
-const postVariants = {
+const variants = {
     initial: {scale: 0.96, y: 30, opacity: 0},
     enter: {scale: 1, y: 0, opacity: 1, transition: {duration: 0.5, ease: [0.48, 0.15, 0.25, 0.96]}},
     exit: {
@@ -15,17 +15,14 @@ const postVariants = {
     }
 };
 
-interface SpotProps extends ISpot {
 
-}
-
-const Spot: React.FC<SpotProps> = (props) => {
+const Spot: React.FC<ISpot> = (props) => {
     const {link, media, heading} = props;
 
     if (!link) return <></>;
 
     return (
-        <motion.div className={styles.spot} variants={postVariants}>
+        <motion.div className={styles.spot} variants={variants}>
             <Link id={link?.id}>
                 <>
                     <motion.div whileHover="hover" variants={{hover: {scale: 0.96}}}>

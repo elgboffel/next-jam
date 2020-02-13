@@ -1,8 +1,8 @@
 import styles from "./Article.module.scss";
 import {NextPage} from 'next';
-import Link from "~/src/js/patches/link";
-import {getFrontmatterByContext} from "~/src/js/utils/site-helpers/frontmatter";
-import {IArticle} from "~/src/js/shared-typings/dato-cms/Article";
+import Link from "~/js/patches/link";
+import {getFrontmatterByContext} from "~/js/utils/site-helpers/frontmatter";
+import {IArticle} from "~/js/shared-typings/dato-cms/Article";
 import {motion} from "framer-motion";
 import React from "react";
 

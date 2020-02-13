@@ -1,7 +1,7 @@
 ---
 id: '2015923'
 itemType: article
-updatedAt: '2020-01-27T21:10:22.818Z'
+updatedAt: '2020-01-31T21:19:04.185Z'
 createdAt: '2019-12-30T21:58:45.965Z'
 position: 0
 children:
@@ -138,7 +138,7 @@ image:
     streamingUrl: 'https://stream.mux.com/null.m3u8'
     thumbnailUrl: 'https://image.mux.com/null/thumbnail.jpg'
     mp4Url: null
-name: Employees
+name: Empoyees
 slug: employees
 objectID: '2015923'
 template: Article

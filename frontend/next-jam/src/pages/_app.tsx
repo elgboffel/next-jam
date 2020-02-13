@@ -2,7 +2,7 @@ import "../scss/main.scss";
 import React from 'react';
 import App from 'next/app';
 import { AnimatePresence } from 'framer-motion';
-import SiteLayout from '~/src/js/components/SiteLayout';
+import SiteLayout from '~/js/components/SiteLayout';
 
 class Site extends App {
   render() {

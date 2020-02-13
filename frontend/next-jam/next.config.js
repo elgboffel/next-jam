@@ -1,7 +1,7 @@
 const compose = require("next-compose-plugins");
 const withSass = require("@zeit/next-sass");
 const path = require("path");
-const siteMap = require("./site/site-map");
+const siteMap = require("./build/dato-cms/siteMap");
 
 const nextConfig = {  
   webpack: function (config) {
@@ -10,7 +10,7 @@ const nextConfig = {
       use: "raw-loader"
     });
 
-    config.resolve.alias["~"] = path.resolve(__dirname);
+    config.resolve.alias["~"] = path.resolve(`${__dirname}/src`);
 
     return config;
   },

@@ -12,7 +12,7 @@ const createData = (item, path, root) => {
 };
 
 const createMarkdown = (item, filePath, root) => {
-    console.log("filepath", filePath)
+    console.log("filepath", filePath);
 
     if (!item) throw `item is ${item}`;
 

@@ -1,6 +1,8 @@
-
 /**
- * @param {object} object
+ * 
+ * @param {Object} objects
+ * @param {Object} index
+ * @param {boolean} clearIndex
  */
 exports.saveRecords = (objects, index, clearIndex = false) => {
 

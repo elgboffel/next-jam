@@ -1,10 +1,11 @@
 import styles from "./FrontPage.module.scss";
 import { NextPage } from 'next';
-import { getFrontmatterByContext } from "~/src/js/utils/site-helpers/frontmatter";
-import { IFrontPage } from "~/src/js/shared-typings/dato-cms/FrontPage";
-import Spot from "~/src/js/components/Spot";
+import { getFrontmatterByContext } from "~/js/utils/site-helpers/frontmatter";
+import { IFrontPage } from "~/js/shared-typings/dato-cms/FrontPage";
+import Spot from "~/js/components/Spot";
 import { motion } from "framer-motion";
 import React from "react";
+import Search from "~/js/components/Search";
 
 
 
@@ -25,9 +26,10 @@ const FrontPage: NextPage<IFrontPage> = (props) => {
                     <Spot key={index} {...spot} />
                 ))}
             </div>
+            <Search/>
         </motion.div>
     )
-}
+};
 
 
 FrontPage.getInitialProps = (context) => getFrontmatterByContext(context);
