@@ -15,5 +15,6 @@ exports.saveRecords = (objects, index, clearIndex = false) => {
 
     return index.saveObjects(objects, (err) => {
         if (err) throw err;
+        console.log(`Records Saved to algolia: ${objects}`);
     });
 }
