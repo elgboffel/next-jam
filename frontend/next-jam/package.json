@@ -20,7 +20,7 @@
     "gray-matter": "^4.0.2",
     "next": "^9.1.6",
     "next-compose-plugins": "^2.2.0",
-    "node-sass": "^4.13.0",
+    "node-sass": "^4.13.1",
     "raw-loader": "^4.0.0",
     "serve": "^11.2.0",
     "typescript": "^3.7.4"
